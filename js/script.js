@@ -24,30 +24,34 @@ function getProductDetails() {
 
 getProductDetails();
 
-// function getSmartphoneCategory(){
-//   fetch(`https://dummyjson.com/products/category/smartphones`)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       // for (var i = 0; i < data.length; i++) {
-//       //   alert(data[i].thumbnail)
-//       //   card +=
-//       //     '<div class="type-sitdown card col-md-5">' +
-//       //     '<img src="' +
-//       //     data[i].thumbnail +
-//       //     '" class="card-image card-img-top" alt="restaurant-image">' +
-//       //     '<div class="card-body" id="card-details">' +
-//       //     '<h5 class="card-title">' +
-//       //     data[i].category +
-//       //     "</h5>";
-//       // }
+function getSmartphoneCategory(){
+  var card = "";
+  fetch(`https://dummyjson.com/products/category/smartphones`)
+    .then((res) => res.json())
+    .then((data) => {
+      
 
-//       console.log(data.products.length);
+      console.log(data.products.length);
 
 
-//       for(var i = 0; i < data.products.length; i++){
-//         console.log(data.products[i].title);
-//       }
-//     });
-// }
-// getSmartphoneCategory();
+      for(var i = 0; i < data.products.length; i++){
+        console.log(data.products[i].title);
+        // for (var i = 0; i < data.products.length; i++) {
+          card += 
+            '<div class="card col-md-5">' +
+            '<img src="' +
+            data.products[i].thumbnail +
+            '" class="card-image card-img-top" alt="restaurant-image">' +
+            '<div class="card-body" >' +
+            '<h5 class="card-title">' +
+            data.products[i].category +
+            "</h5></div></div>";
+            
+        // }
+        
+      }
+      document.getElementById("mobile-card-details").innerHTML = card;
+    });
+}
+getSmartphoneCategory();
 
