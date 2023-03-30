@@ -41,14 +41,20 @@
   margin-left: 25px;
 }
 .carousel-control-prev-icon {
-  background-image: url("../images/left-arrow.png") !important;
+  /* background-image: url("../images/left-arrow.png") !important; */
   width: 50px !important;
-  height: 50px !important;
+  height: 100px !important;
+  border: 2px solid darkgray;
+  background: #74a4d4;
+  border-radius: 10px;
 }
 .carousel-control-next-icon {
-  background-image: url("../images/right-arrow.png") !important;
+  /* background-image: url("../images/right-arrow.png") !important; */
   width: 50px !important;
-  height: 50px !important;
+  height: 100px !important;
+  border: 2px solid darkgray;
+  background: #74a4d4;
+  border-radius: 10px;
 }
 
 #mobile-card-details {
