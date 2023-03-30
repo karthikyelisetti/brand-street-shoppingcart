@@ -7,7 +7,7 @@ function fetchProdctsSummary() {
 
       data.products.forEach((object) => {
         card += `<div class="col-md-3">
-                    <div class="card">
+                    <div class="card card-details">
                     <h6 class="card-title text-sm-center mt-2">
                         ${object.description}
                     </h6>

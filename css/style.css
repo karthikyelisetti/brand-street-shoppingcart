@@ -56,7 +56,9 @@
   background: #74a4d4;
   border-radius: 10px;
 }
-
+.card-details {
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
 #mobile-card-details {
   padding-left: 100px;
   padding-top: -200px;
