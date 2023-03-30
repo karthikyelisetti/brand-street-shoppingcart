@@ -1,28 +1,4 @@
-function getProductDetails() {
-  var card="";
-  fetch(`https://dummyjson.com/products`)
-    .then((res) => res.json())
-    .then((data) => {
-      for (var i = 0; i < data.products.length; i++) {
-        card += 
-          '<div class="card col-md-5">' +
-          '<img src="' +
-          data.products[i].thumbnail +
-          '" class="card-image card-img-top" alt="restaurant-image">' +
-          '<div class="card-body" id="card-details">' +
-          '<h5 class="card-title">' +
-          data.products[i].category +
-          "</h5></div></div>";
-          
-      }
-      document.getElementById("card-details").innerHTML = card;
-      
-    });
-    // console.log(card);
-    // 
-}
-
-getProductDetails();
+// getProductDetails();
 
 function getSmartphoneCategory(){
   var card = "";
@@ -53,5 +29,5 @@ function getSmartphoneCategory(){
       document.getElementById("mobile-card-details").innerHTML = card;
     });
 }
-getSmartphoneCategory();
+// getSmartphoneCategory();
 

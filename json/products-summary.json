@@ -1,0 +1,32 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Best of Electronics",
+            "description": "Upto 15% off | Best of Elecronics",
+            "category": "electronics",
+            "images": "../images/electronics.png"
+        },
+        {
+            "id": 2,
+            "title": "Styles for men & women",
+            "description": "Styles for men & women | Upto 20% off",
+            "category": "clothing",
+            "images": "../images/styles-men-women.png"
+        },
+        {
+            "id": 3,
+            "title": "Revamp your home in style",
+            "description": "Upto 20% off | Revamp your home in style",
+            "category": "home-furnishing",
+            "images": "../images/home-style.png"
+        },
+        {
+            "id": 4,
+            "title": "Best of Electronics",
+            "description": "Automotive essentials | Upto 20% off",
+            "category": "electronics",
+            "images": "../images/automotives.png"
+        }
+    ]
+}
