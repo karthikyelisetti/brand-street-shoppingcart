@@ -72,8 +72,9 @@
 }
 
 #top-reviewed {
-  border: 1px solid #e2e2e2;
+  border: 2px solid #e2e2e2;
   border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #carouselExample {
   padding-top: 10px;

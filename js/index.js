@@ -18,7 +18,7 @@ function fetchProdctsSummary() {
                     />
                     <div class="card-footer">
                         <a
-                        href="mobiles.html"
+                        href="${object.href}"
                         class="btn btn-secondary btn-sm"
                         style="
                             --bs-btn-padding-y: 0.25rem;
