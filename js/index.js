@@ -3,8 +3,6 @@ function fetchProdctsSummary() {
   fetch("./json/products-summary.json")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-
       data.products.forEach((object) => {
         card += `<div class="col-md-3">
                     <div class="card card-details">
