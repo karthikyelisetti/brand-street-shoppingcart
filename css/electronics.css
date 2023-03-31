@@ -16,3 +16,11 @@
 .card-body .offer {
   font-size: 9px;
 }
+.ele-sec {
+  margin: 0 auto;
+}
+.add-to-cart {
+  /* margin-left: 150px; */
+  margin-bottom: 6px;
+  margin-right: 6px;
+}

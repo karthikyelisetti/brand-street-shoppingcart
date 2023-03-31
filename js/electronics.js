@@ -31,6 +31,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div> 
             </div>
             </div>
@@ -44,6 +47,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -57,6 +63,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -98,6 +107,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -111,6 +123,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -124,6 +139,9 @@ function fetchEletronicDetails() {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -257,6 +275,9 @@ function fetchCategoryDetails(id) {
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div> 
             </div>
             </div>
@@ -270,6 +291,9 @@ function fetchCategoryDetails(id) {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -283,6 +307,9 @@ function fetchCategoryDetails(id) {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
+                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                        Add to cart
+                    </button></span>
                 </div>
             </div>
             </div>
@@ -291,7 +318,6 @@ function fetchCategoryDetails(id) {
         }
       });
       
-      console.log(indvCard);
       document.getElementById("electronics-card").innerHTML = indvCard;
     });
 }
