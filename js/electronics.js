@@ -234,7 +234,7 @@ function fetchSideBarDetails() {
                      </li>`
         }
       });
-      
+      counter = 0;
       sideBar += `</ul></div></li></ul>`
       document.getElementById("ele-collapse").innerHTML = sideBar;
     });
