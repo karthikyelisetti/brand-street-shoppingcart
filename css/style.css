@@ -40,29 +40,6 @@
 #cart-logo {
   margin-left: 25px;
 }
-.carousel-control-prev-icon {
-  /* background-image: url("../images/left-arrow.png") !important; */
-  width: 50px !important;
-  height: 100px !important;
-  border: 2px solid darkgray;
-  background: #74a4d4;
-  border-radius: 10px;
-}
-.carousel-control-next-icon {
-  /* background-image: url("../images/right-arrow.png") !important; */
-  width: 50px !important;
-  height: 100px !important;
-  border: 2px solid darkgray;
-  background: #74a4d4;
-  border-radius: 10px;
-}
-.card-details {
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-}
-#mobile-card-details {
-  padding-left: 100px;
-  padding-top: -200px;
-}
 
 <<<<<<< HEAD
 #mobile-card-details{
@@ -89,28 +66,30 @@ margin-top: auto;
   padding-top: 18px;
 }
 
-#top-reviewed {
-  border: 2px solid #e2e2e2;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+/* Electronics specific change */
+.ele-sec {
+  margin: 0 auto;
 }
-#carouselExample {
-  padding-top: 10px;
-  padding-bottom: 24px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+/* shoping cart page css changes */
+.flex-shrink-0 {
+  width: 280px;
 }
-#top-reviewed .title {
-  padding: 5px 15px;
+.text-body-secondary .checked {
+  color: orange;
 }
-.card-wrapper .card {
-  width: 300px;
-  height: 180px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 0;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+.card-body .description {
+  font-size: 12px;
+  color: #111c97;
 }
-.card-wrapper .card .card-body {
-    background: linear-gradient(to right, #c5e1ef, #fff);
-  }
+.card-body .discount {
+  font-size: 15px;
+  color: #111c97;
+}
+.card-body .offer {
+  font-size: 9px;
+}
+.add-to-cart {
+  margin-bottom: 6px;
+  margin-right: 6px;
+}

@@ -1,0 +1,45 @@
+.carousel-control-prev-icon {
+  /* background-image: url("../images/left-arrow.png") !important; */
+  width: 50px !important;
+  height: 100px !important;
+  border: 2px solid darkgray;
+  background: #74a4d4;
+  border-radius: 10px;
+}
+.carousel-control-next-icon {
+  /* background-image: url("../images/right-arrow.png") !important; */
+  width: 50px !important;
+  height: 100px !important;
+  border: 2px solid darkgray;
+  background: #74a4d4;
+  border-radius: 10px;
+}
+.card-details {
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+
+#top-reviewed {
+  border: 2px solid #e2e2e2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#carouselExample {
+  padding-top: 10px;
+  padding-bottom: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#top-reviewed .title {
+  padding: 5px 15px;
+}
+.card-wrapper .card {
+  width: 300px;
+  height: 180px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+.card-wrapper .card .card-body {
+  background: linear-gradient(to right, #c5e1ef, #fff);
+}
