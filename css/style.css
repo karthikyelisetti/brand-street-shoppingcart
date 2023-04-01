@@ -41,12 +41,22 @@
   margin-left: 25px;
 }
 
+<<<<<<< HEAD
+#mobile-card-details{
+/* padding-left: 200px;
+padding-top: -200px; */
+
+margin-left: 200px;
+margin-top: auto;
+
+=======
 /* Footer section */
 .footer {
   color: #fff;
   font-size: 14px;
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
   margin-top: 100px;
+>>>>>>> 168d510401e3ccb4fceea70b1eb27bae59226d29
 }
 .copyright {
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
