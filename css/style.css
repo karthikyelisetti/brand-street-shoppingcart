@@ -4,7 +4,8 @@
 }
 
 .navbar-brand {
-  font-family: cursive;
+  font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+    Geneva, Verdana, sans-serif;
 }
 .navbar-nav {
   margin: 0 auto;
@@ -13,7 +14,7 @@
   color: #fff;
   margin-left: 6px;
   padding: 12px;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .nav-link::after {
@@ -41,22 +42,12 @@
   margin-left: 25px;
 }
 
-<<<<<<< HEAD
-#mobile-card-details{
-/* padding-left: 200px;
-padding-top: -200px; */
-
-margin-left: 200px;
-margin-top: auto;
-
-=======
 /* Footer section */
 .footer {
   color: #fff;
   font-size: 14px;
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
   margin-top: 100px;
->>>>>>> 168d510401e3ccb4fceea70b1eb27bae59226d29
 }
 .copyright {
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
@@ -66,9 +57,20 @@ margin-top: auto;
   padding-top: 18px;
 }
 
-/* Electronics specific change */
-.ele-sec {
+/* Product pages specific change */
+.product-sec {
   margin: 0 auto;
+}
+.product-title {
+  color: #50376d;
+  border-bottom: 4px double rgb(149, 141, 84);
+  font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+    Geneva, Verdana, sans-serif;
+  text-transform: capitalize;
+}
+.category-list {
+  text-transform: capitalize;
+  font-size: 100px;
 }
 
 /* shoping cart page css changes */
