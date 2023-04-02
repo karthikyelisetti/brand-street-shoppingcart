@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,6 +14,8 @@
     />
   </head>
   <body>
+
+    <!-- Navigation -->
     <nav
       class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
       data-bs-theme="dark"
@@ -33,31 +36,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Mobiles</a
+              <a class="nav-link active" aria-current="page" href="electronics.html"
+                >Electronics</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Laptops</a
+              <a class="nav-link active" aria-current="page" href="fashion.html"
+                >Fashion</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Perfumes</a
+              <a class="nav-link active" aria-current="page" href="home-furnish.html"
+                >Home-Furnishing</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" aria-current="page" href="groceries.html"
                 >Groceries</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Home Furnishing</a
+              <a class="nav-link active" aria-current="page" href="automotives.html"
+                >Automotives</a
               >
             </li>
           </ul>
@@ -203,15 +206,72 @@
       </button>
     </div>
 
-    <div class="row mt-5 justify-content-center" id="card-details"></div>
+    <!-- Products summary section (discount cards) -->
+    <section class="container-fluid mt-5">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="summary-card">
+        <!-- dynamically population from products-summary.json -->
+      </div>
+    </section>
 
+    <!-- Top reviewed cards section -->
+    <section class="top-reviewed mt-5">
+      <div class="container-fluid">
+        <div class="review-border" id="top-reviewed">
+          <h5 class="title fw-semi-bold">Top reviewed</h5>
+          <div
+            id="carouselExample"
+            class="carousel slide d-none d-sm-block"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner" id="reviewed">
+              <!-- dynamically population from top-reviewed.json -->
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="copyright fw-medium">
+            <p>&copy; 2023 Brand Street. All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Calling the JS files to populate the data -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js">
-      window.onload = getProductDetails;
-    </script>
+    <script src="js/index.js"></script>
   </body>
 </html>
