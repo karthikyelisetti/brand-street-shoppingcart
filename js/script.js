@@ -6,17 +6,16 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
     .then((data) => {
       data.products.forEach((object) => {
         card += `<div class="col-md-3">
-                    <div class="card mb-3" style="height: 400px;">                      
+                    <div class="card mb-3" style="height: 380px;">                      
                       <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">               
                       <div class="card-body">
                         <h6 class="card-title discount">
-                            Upto ${object.discountPercentage}% off
+                          Upto ${object.discountPercentage}% off
                         </h6>
                         <h6 class="card-title">${object.title}</h6>
                         <p class="card-text description">${object.description}</p>
                         <span class="card-text"><small class="text-body-secondary fw-bold">
-                            Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} * &nbsp&nbsp
-                            <span class="offer">*Including discount offer </span>
+                          Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} *
                         </small></span><br />
                         <span class="card-text">`;
         if (object.rating > 4) {
@@ -27,9 +26,19 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                       <span class="fa fa-star checked"></span>
                       <span class="fa fa-star"></span>
                     </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
-                      Add to cart
-                    </button></span>                
+                    <div>
+                      <span class="offer position-absolute bottom-0 end-0 mb-2">*Including discount offer </span>
+                      <span>
+                        <button type="button" 
+                          class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                          style="
+                              --bs-btn-padding-y: 0.5rem;
+                              --bs-btn-padding-x: 0.75rem;
+                              --bs-btn-font-size: 0.90rem;
+                            ">
+                          Add to cart
+                        </button></span>
+                    </div>                                   
                 </div>
                 </div>
                 </div>`;
@@ -69,7 +78,11 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
 }
 
 // function to populate the sidepar menu
-function fetchSideBarDetails(apiURL, categoryArr, elementID = "products-collapse") {
+function fetchSideBarDetails(
+  apiURL,
+  categoryArr,
+  elementID = "products-collapse"
+) {
   var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
                   <span class="fs-5 fw-semibold">Category</span>
                  </a>`;
@@ -171,17 +184,22 @@ function fetchCategoryDetails(id, elementID = "product-details") {
             </div>`;
         }
       });
-      card += `</div>`
+      card += `</div>`;
       document.getElementById(`${elementID}`).innerHTML = indvCard;
     });
 }
 
 function addProductsDiv(categoryArr, elementID = "product-details") {
   var card = "";
-  for(var i = 0; i < categoryArr.length; i++) {
-    card += '<h3 class="product-title mt-3">'+categoryArr[i]+'</h3>' +
-            '<div class="row row-cols-1 row-cols-md-2 g-4 mt-3" id="' +categoryArr[i]+ '-card">' +
-            '</div>';
+  for (var i = 0; i < categoryArr.length; i++) {
+    card +=
+      '<h3 class="product-title mt-3">' +
+      categoryArr[i] +
+      "</h3>" +
+      '<div class="row row-cols-1 row-cols-md-2 g-4 mt-3" id="' +
+      categoryArr[i] +
+      '-card">' +
+      "</div>";
   }
 
   document.getElementById(`${elementID}`).innerHTML = card;
