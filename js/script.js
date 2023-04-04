@@ -5,18 +5,18 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
     .then((res) => res.json())
     .then((data) => {
       data.products.forEach((object) => {
-        card += `<div class="col-md-6">
-                    <div class="card mb-3" style="width: 540px;">
-                        <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 200px" alt="${object.title}">
-                        </div>
-                        <div class="col-md-8">
+        card += `<div class="col-md-3">
+                    <div class="card mb-3" style="height: 400px;">
+                        
+                        
+                            <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">
+                        
+                        
                             <div class="card-body">
                                 <h6 class="card-title discount">
                                     Upto ${object.discountPercentage}% off
                                 </h6>
-                                <h5 class="card-title">${object.title}</h5>
+                                <h6 class="card-title">${object.title}</h6>
                                 <p class="card-text description">${object.description}</p>
                                 <span class="card-text"><small class="text-body-secondary fw-bold">
                                     Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} * &nbsp&nbsp
@@ -34,11 +34,11 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                     <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
                         Add to cart
                     </button></span>
-                </div> 
+                
             </div>
             </div>
             </div>
-            </div>`;
+            `;
         } else if (object.rating > 3 && object.rating < 4) {
           card += `<small class="text-body-secondary">
                         <span class="fa fa-star checked"></span>
