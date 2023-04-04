@@ -6,39 +6,33 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
     .then((data) => {
       data.products.forEach((object) => {
         card += `<div class="col-md-3">
-                    <div class="card mb-3" style="height: 400px;">
-                        
-                        
-                            <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">
-                        
-                        
-                            <div class="card-body">
-                                <h6 class="card-title discount">
-                                    Upto ${object.discountPercentage}% off
-                                </h6>
-                                <h6 class="card-title">${object.title}</h6>
-                                <p class="card-text description">${object.description}</p>
-                                <span class="card-text"><small class="text-body-secondary fw-bold">
-                                    Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} * &nbsp&nbsp
-                                    <span class="offer">*Including discount offer </span>
-                                </small></span><br />
-                                <span class="card-text">`;
+                    <div class="card mb-3" style="height: 400px;">                      
+                      <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">               
+                      <div class="card-body">
+                        <h6 class="card-title discount">
+                            Upto ${object.discountPercentage}% off
+                        </h6>
+                        <h6 class="card-title">${object.title}</h6>
+                        <p class="card-text description">${object.description}</p>
+                        <span class="card-text"><small class="text-body-secondary fw-bold">
+                            Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} * &nbsp&nbsp
+                            <span class="offer">*Including discount offer </span>
+                        </small></span><br />
+                        <span class="card-text">`;
         if (object.rating > 4) {
           card += `<small class="text-body-secondary">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
                     </small></span>
                     <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
-                        Add to cart
-                    </button></span>
-                
-            </div>
-            </div>
-            </div>
-            `;
+                      Add to cart
+                    </button></span>                
+                </div>
+                </div>
+                </div>`;
         } else if (object.rating > 3 && object.rating < 4) {
           card += `<small class="text-body-secondary">
                         <span class="fa fa-star checked"></span>
@@ -51,10 +45,8 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                         Add to cart
                     </button></span>
                 </div>
-            </div>
-            </div>
-            </div>
-            </div>`;
+                </div>
+                </div>`;
         } else {
           card += `<small class="text-body-secondary">
                         <span class="fa fa-star"></span>
@@ -67,10 +59,8 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                         Add to cart
                     </button></span>
                 </div>
-            </div>
-            </div>
-            </div>
-            </div>`;
+                </div>
+                </div>`;
         }
       });
 
