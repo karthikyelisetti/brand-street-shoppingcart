@@ -21,7 +21,8 @@
       data-bs-theme="dark"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Brand Street</a>
+        
+        <a class="navbar-brand" href="index.html">Brand Street</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -275,6 +276,18 @@
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="https://otpless.com/auth.js"></script>
+    <!-- Get user's whatsapp number and name -->
+    <script type="text/javascript">
+      function otpless(otplessUser) {
+        var waName = otplessUser.waName;
+        var waNumber = otplessUser.waNumber;
+        // Signup/signin the user and redirect to next page
+        document.getElementById("hello").innerText  = `Hi! ${waName} Welcome to Quiz`;
+        document.getElementById("otpless").style.display = "none";
+
+        document.getElementById("start_Quiz").style.display = "block";
+      }</script>
     <script src="js/index.js"></script>
   </body>
 </html>
