@@ -92,14 +92,14 @@ function fetchSideBarDetails(
       data.forEach((object) => {
         if (categoryArr.includes(object)) {
           sideBar +=
-            '<ul class="list-unstyled ps-0"><li class="mb-1 fw-semi-bold">' +
+            '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-semi-bold">' +
             "<button" +
-            'class="category-list btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"' +
+            'class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"' +
             'data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true"' +
             'onclick="fetchCategoryDetails(this.id)" id= "' +
             object +
             '" >' +
-            object.toUpperCase() +
+            object +
             "</button></li></ul>";
         }
       });
@@ -115,76 +115,95 @@ function fetchCategoryDetails(id, elementID = "product-details") {
     .then((res) => res.json())
     .then((data) => {
       data.products.forEach((object) => {
-        indvCard += `<div class="col-md-6">
-                    <div class="card mb-3" style="width: 540px;">
-                        <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 200px" alt="${object.title}">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h6 class="card-title discount">
-                                    Upto ${object.discountPercentage}% off
-                                </h6>
-                                <h5 class="card-title">${object.title}</h5>
-                                <p class="card-text description">${object.description}</p>
-                                <span class="card-text"><small class="text-body-secondary fw-bold">
-                                    Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} * &nbsp&nbsp
-                                    <span class="offer">*Including discount offer </span>
-                                </small></span><br />
-                                <span class="card-text">`;
+        indvCard += `<div class="col-md-3">
+                      <div class="card mb-3" style="height: 360px;">                      
+                        <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">               
+                        <div class="card-body">
+                          <h6 class="card-title discount">
+                            Upto ${object.discountPercentage}% off
+                          </h6>
+                          <h6 class="card-title">${object.title}</h6>
+                          <p class="card-text description">${object.description}</p>
+                          <span class="card-text"><small class="text-body-secondary fw-bold">
+                            Price: <image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price} *
+                          </small></span><br />
+                          <span class="card-text">`;
 
         if (object.rating > 4) {
           indvCard += `<small class="text-body-secondary">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
                     </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
-                        Add to cart
-                    </button></span>
-                </div> 
-            </div>
-            </div>
-            </div>
-            </div>`;
+                    <div>
+                      <span class="offer position-absolute bottom-0 end-0 mb-2">*Including discount offer </span>
+                      <span>
+                        <button type="button" 
+                          class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                          style="
+                              --bs-btn-padding-y: 0.5rem;
+                              --bs-btn-padding-x: 0.75rem;
+                              --bs-btn-font-size: 0.90rem;
+                            ">
+                          Add to cart
+                        </button></span>
+                    </div>                                   
+                </div>
+                </div>
+                </div>`;
         } else if (object.rating > 3 && object.rating < 4) {
           indvCard += `<small class="text-body-secondary">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </small></span>
+                  <div>
+                    <span class="offer position-absolute bottom-0 end-0 mb-2">*Including discount offer </span>
+                    <span>
+                      <button type="button" 
+                        class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                        style="
+                            --bs-btn-padding-y: 0.5rem;
+                            --bs-btn-padding-x: 0.75rem;
+                            --bs-btn-font-size: 0.90rem;
+                          ">
                         Add to cart
-                    </button></span>
-                </div>
-            </div>
-            </div>
-            </div>
-            </div>`;
+                      </button></span>
+                  </div>                                   
+              </div>
+              </div>
+              </div>`;
         } else {
           indvCard += `<small class="text-body-secondary">
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </small></span>
+                  <div>
+                    <span class="offer position-absolute bottom-0 end-0 mb-2">*Including discount offer </span>
+                    <span>
+                      <button type="button" 
+                        class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                        style="
+                            --bs-btn-padding-y: 0.5rem;
+                            --bs-btn-padding-x: 0.75rem;
+                            --bs-btn-font-size: 0.90rem;
+                          ">
                         Add to cart
-                    </button></span>
-                </div>
-            </div>
-            </div>
-            </div>
-            </div>`;
+                      </button></span>
+                  </div>                                   
+              </div>
+              </div>
+              </div>`;
         }
       });
-      card += `</div>`;
+      // indvCard += `</div>`;
       document.getElementById(`${elementID}`).innerHTML = indvCard;
     });
 }
