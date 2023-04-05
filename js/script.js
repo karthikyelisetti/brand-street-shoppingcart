@@ -1,7 +1,6 @@
 // Function to fetch the electronics category card details
 function fetchAPICardDetails(apiUrl, category, elementID) {
   var card = "";
-  alert(`${apiUrl}/${category}`);
   fetch(`${apiUrl}/${category}`)
     .then((res) => res.json())
     .then((data) => {
