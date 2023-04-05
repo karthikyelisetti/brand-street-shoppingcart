@@ -12,7 +12,7 @@
 }
 .navbar-nav .nav-link {
   color: #fff;
-  margin-left: 6px;
+  margin-left: 3px;
   padding: 12px;
   font-size: 15px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -30,7 +30,7 @@
 }
 
 .nav-link {
-  padding: 25px 25px;
+  padding: 24px 24px;
   transition: 0.2s;
 }
 
@@ -106,4 +106,10 @@
 .add-to-cart {
   margin-bottom: 6px;
   margin-right: 6px;
+}
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

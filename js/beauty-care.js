@@ -1,5 +1,5 @@
 var card = "";
-var categoryArr = ["automotive", "motorcycle"];
+var categoryArr = ["fragrances", "skincare"];
 var apiURL = "https://dummyjson.com/products/category";
 
 //Adding the product div tags

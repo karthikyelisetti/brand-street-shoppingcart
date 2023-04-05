@@ -4,9 +4,9 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
   fetch(`${apiUrl}/${category}`)
     .then((res) => res.json())
     .then((data) => {
-      data.products.forEach((object) => {
+      data.products.forEach((object, key) => {
         card += `<div class="col-md-3">
-                    <div class="card mb-3" style="height: 380px;">                      
+                    <div class="card mb-3" style="height: 360px;">                      
                       <img src="${object.thumbnail}" class="card-img-top" style="width: 100%; height: 150px" alt="${object.title}">               
                       <div class="card-body">
                         <h6 class="card-title discount">
