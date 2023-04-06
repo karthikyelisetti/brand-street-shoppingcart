@@ -1,3 +1,4 @@
+var apiSearchUrl;
 // Function to fetch the electronics category card details
 function fetchAPICardDetails(apiUrl, category, elementID) {
   var card = "";
@@ -321,4 +322,39 @@ function searchProducts(apiUrl, elementID="product-details") {
       
       document.getElementById(`${elementID}`).innerHTML = searchCard;
     })
+}
+
+function navigateToSearch () {
+  var value = document.getElementById("search-input").value;
+  const link = document.createElement('a');
+  apiSearchUrl = `https://dummyjson.com/products/search?q=${value}`;
+  localStorage.setItem("searchUrl", apiSearchUrl);
+  link.href = "./search.html";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
+function pplteSideBarList(apiURL, elementID = "products-collapse") {
+  var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+                  <span class="fs-5 fw-semibold">Category</span>
+                 </a>`;
+  fetch(`${apiURL}`)
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((object) => {
+        sideBar +=
+          '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-semi-bold">' +
+          "<button" +
+          'class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"' +
+          'data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true"' +
+          'onclick="fetchCategoryDetails(this.id)" id= "' +
+          object +
+          '" >' +
+          object +
+          "</button></li></ul>";
+      });
+
+      document.getElementById(`${elementID}`).innerHTML = sideBar;
+    });
 }
