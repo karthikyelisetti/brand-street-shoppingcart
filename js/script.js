@@ -374,7 +374,8 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
     });
 }
 
-var counter = parseInt(localStorage.getItem("cartCounter"));
+var counter = localStorage.getItem("cartCounter") == NaN ? 0 : localStorage.getItem("cartCounter");
+alert(counter);
 function addToCart() {
   counter += 1;
   document.getElementById("quantity").innerHTML = counter;
