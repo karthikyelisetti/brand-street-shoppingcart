@@ -376,9 +376,6 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
 
 var counter = isNaN(localStorage.getItem("cartCounter")) ? 0 : localStorage.getItem("cartCounter");
 function addToCart() {
-  // if (isNaN(counter)) {
-  //   alert(1);
-  // }
   counter += 1;
   document.getElementById("quantity").innerHTML = counter;
   localStorage.setItem("cartCounter", counter);
