@@ -42,7 +42,7 @@
   width: 39px;
   margin-left: 21px;
 }
-.quantity {
+#quantity {
   border: 1px solid #50376d;
   background-color: #50376d;
   color: #fff;

@@ -36,7 +36,8 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                               --bs-btn-padding-y: 0.5rem;
                               --bs-btn-padding-x: 0.75rem;
                               --bs-btn-font-size: 0.90rem;
-                            ">
+                            "
+                            onclick="addToCart()">
                           Add to cart
                         </button></span>
                     </div>                                   
@@ -51,9 +52,16 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                    <span>
+                      <button type="button" 
+                        class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                        style="
+                            --bs-btn-padding-y: 0.5rem;
+                            --bs-btn-padding-x: 0.75rem;
+                            --bs-btn-font-size: 0.90rem;
+                          ">
                         Add to cart
-                    </button></span>
+                      </button></span>
                 </div>
                 </div>
                 </div>`;
@@ -65,9 +73,16 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </small></span>
-                    <span><button type="button" class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart">
+                    <span>
+                      <button type="button" 
+                        class="btn btn-primary position-absolute bottom-0 end-0 add-to-cart"
+                        style="
+                            --bs-btn-padding-y: 0.5rem;
+                            --bs-btn-padding-x: 0.75rem;
+                            --bs-btn-font-size: 0.90rem;
+                          ">
                         Add to cart
-                    </button></span>
+                      </button></span>
                 </div>
                 </div>
                 </div>`;
@@ -357,4 +372,11 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
 
       document.getElementById(`${elementID}`).innerHTML = sideBar;
     });
+}
+
+var counter = parseInt(localStorage.getItem("cartCounter"));
+function addToCart() {
+  counter += 1;
+  document.getElementById("quantity").innerHTML = counter;
+  localStorage.setItem("cartCounter", counter);
 }
