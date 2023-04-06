@@ -39,18 +39,19 @@
   margin-top: -5px;
 }
 #cart-logo {
-  margin-left: 25px;
+  width: 39px;
+  margin-left: 21px;
 }
 .quantity {
   border: 1px solid #50376d;
   background-color: #50376d;
   color: #fff;
   border-radius: 50%;
-  padding: 2px 8px;
+  padding: 2px 6px;
   position: absolute;
-  font-size: 15px;
-  left: 97%;
-  margin-top: -60px;
+  font-size: 10px;
+  left: 98%;
+  margin-top: -39px;
 }
 
 .carousel-control-prev-icon {
