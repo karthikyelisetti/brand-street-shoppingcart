@@ -29,6 +29,7 @@ function fetchProdctsSummary() {
                     </div>
                 </div>`;
       });
+      
       document.getElementById("summary-card").innerHTML = card;
     });
 }
@@ -95,7 +96,7 @@ function fetchTopReviewed() {
           }
         }
       });
-      console.log(card);
+
       document.getElementById("reviewed").innerHTML = card;
     });
 }
