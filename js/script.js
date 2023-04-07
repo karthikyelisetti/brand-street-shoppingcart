@@ -59,7 +59,8 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                 </div>
@@ -80,7 +81,8 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                 </div>
@@ -162,7 +164,8 @@ function fetchCategoryDetails(id, elementID = "product-details") {
                               --bs-btn-padding-y: 0.5rem;
                               --bs-btn-padding-x: 0.75rem;
                               --bs-btn-font-size: 0.90rem;
-                            ">
+                            "
+                            onclick="addToCart()">
                           Add to cart
                         </button></span>
                     </div>                                   
@@ -186,7 +189,8 @@ function fetchCategoryDetails(id, elementID = "product-details") {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                   </div>                                   
@@ -210,7 +214,8 @@ function fetchCategoryDetails(id, elementID = "product-details") {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                   </div>                                   
@@ -277,7 +282,8 @@ function searchProducts(apiUrl, elementID="product-details") {
                               --bs-btn-padding-y: 0.5rem;
                               --bs-btn-padding-x: 0.75rem;
                               --bs-btn-font-size: 0.90rem;
-                            ">
+                            "
+                            onclick="addToCart()">
                           Add to cart
                         </button></span>
                     </div>                                   
@@ -301,7 +307,8 @@ function searchProducts(apiUrl, elementID="product-details") {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                   </div>                                   
@@ -325,7 +332,8 @@ function searchProducts(apiUrl, elementID="product-details") {
                             --bs-btn-padding-y: 0.5rem;
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
-                          ">
+                          "
+                          onclick="addToCart()">
                         Add to cart
                       </button></span>
                   </div>                                   

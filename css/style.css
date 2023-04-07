@@ -41,6 +41,7 @@
 #cart-logo {
   width: 39px;
   margin-left: 21px;
+  cursor: pointer;
 }
 #quantity {
   border: 1px solid #50376d;
@@ -52,6 +53,7 @@
   font-size: 10px;
   left: 98%;
   margin-top: -39px;
+  cursor: pointer;
 }
 
 .carousel-control-prev-icon {
