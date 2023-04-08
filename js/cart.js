@@ -7,7 +7,7 @@ function processCart() {
   );
   localStorage.clear();
   document.getElementById("quantity").innerHTML = 0;
-  setTimeout(navigateToHome(), 5000);
+  setTimeout(navigateToHome(), 20000);
 }
 
 function navigateToHome() {
