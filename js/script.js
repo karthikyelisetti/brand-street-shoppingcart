@@ -1,3 +1,17 @@
+const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+
+const alert = (message, type) => {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    "</div>",
+  ].join("");
+
+  alertPlaceholder.append(wrapper);
+};
+
 var apiSearchUrl;
 // Function to fetch the electronics category card details
 function fetchAPICardDetails(apiUrl, category, elementID) {
@@ -37,7 +51,9 @@ function fetchAPICardDetails(apiUrl, category, elementID) {
                               --bs-btn-padding-x: 0.75rem;
                               --bs-btn-font-size: 0.90rem;
                             "
-                            onclick="addToCart()">
+                            id="${object.id}"
+                            onclick="addToCart(${object.id})"
+                          >
                           Add to cart
                         </button></span>
                     </div>                                   
@@ -333,7 +349,8 @@ function searchProducts(apiUrl, elementID="product-details") {
                             --bs-btn-padding-x: 0.75rem;
                             --bs-btn-font-size: 0.90rem;
                           "
-                          onclick="addToCart()">
+                          onclick="addToCart(this.id)"
+                          id="${object.id}">
                         Add to cart
                       </button></span>
                   </div>                                   
@@ -385,10 +402,97 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
 var counter = parseInt(localStorage.getItem("cartCounter"));
 if (isNaN(counter)) {
   counter = 0;
+  var cartArr = [];
+}else {  
+  var cartArr = localStorage.getItem("cartArray").split(',');
 }
 document.getElementById("quantity").innerHTML = counter;
-function addToCart() {
-  counter += 1;
-  document.getElementById("quantity").innerHTML = counter;
-  localStorage.setItem("cartCounter", counter);
+function addToCart(id) {  
+  if (cartArr.length != 0 && cartArr.includes(id.toString())){
+    alert("Item is already added to the cart", "warning");
+    return false;
+  }else{
+    cartArr.push(id.toString());
+    counter += 1;
+    document.getElementById("quantity").innerHTML = counter;
+    localStorage.setItem("cartCounter", counter);
+    localStorage.setItem("cartArray", cartArr);
+  }
+}
+
+function fetchCartDetails(cartArr) {
+  var cartCard = "";
+  var summaryCard = "";
+  var price = 0;
+  var tax = 0;
+  var total = 0;
+  var package = 150;
+  fetch("https://dummyjson.com/products")
+    .then((res) => res.json())
+    .then((data) => {
+      data.products.forEach((object) => {
+        for (i in cartArr) {
+          if (object.id == cartArr[i]) {
+            cartCard += `<div class="card cart-details mb-3">
+                          <div class="row g-0">
+                            <div class="col-md-3">
+                              <img
+                                src="${object.thumbnail}"
+                                class="img-fluid rounded-start"
+                                alt="${object.title}"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <div class="card-body col d-flex ml-3">
+                                <h5 class="card-title prd-title col-md-5">${object.title}</h5>
+                                <p class="card-text col-md-3">1</p>
+                                <p class="card-text col-md-3"><image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price}</p>
+                                <p class="card-text col-md-1">
+                                  <img src="./images/trash.svg" alt="trash" />
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                         </div>`;
+            
+            price += Number(object.price);
+          }
+        }
+
+      });
+        tax = (price * (18/100));
+        total = price + package + tax;
+        summaryCard += `<div class="card summary-details">
+                          <div class="card-body">
+                            <h5 class="card-title">Cart Summary</h5>
+                            <p class="card-text col d-flex">
+                              <table>
+                                  <tr>
+                                      <td class="fw-bold">Items:</td>
+                                      <td>${price}</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="fw-bold">Package:</td>
+                                      <td>${package}</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="fw-bold">Tax:</td>
+                                      <td>${tax}</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="fw-bold">Total:</td>
+                                      <td>${total}</td>
+                                  </tr>
+                              </table>
+                            </p>
+                            <div class="d-flex ">
+                              <a href="#" class="btn btn-outline-success col-md-6 btn-checkout" onclick="processCart()">Checkout</a>                
+                            </div>
+                            
+                          </div>
+                        </div>`;
+
+      document.getElementById("product-details").innerHTML = cartCard;
+      document.getElementById("cart-summary").innerHTML = summaryCard;
+    });
 }

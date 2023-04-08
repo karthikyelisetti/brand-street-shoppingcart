@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/sidebars.css" />
+    <link href="css/cart.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,16 +13,21 @@
       crossorigin="anonymous"
     />
     <!-- Font Awesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Furnishing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Electronics</title>
   </head>
   <body>
+    <!-- Navigation -->
     <nav
       class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
       data-bs-theme="dark"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Brand Street</a>
+        <a class="navbar-brand" href="index.html">Brand Street</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,10 +42,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="electronics.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="electronics.html"
                 >Electronics</a
               >
             </li>
@@ -50,22 +60,34 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home-furnish.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="home-furnish.html"
                 >Furnishing</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="groceries.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="groceries.html"
                 >Groceries</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="automotives.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="automotives.html"
                 >Automotives</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="beauty-care.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="beauty-care.html"
                 >Beauty & Care</a
               >
             </li>
@@ -105,13 +127,18 @@
       </div>
     </nav>
 
-    <!--HomeFurnish details section -->
-    <section class="home-furnish col d-flex">
-      <div class="flex-shrink-0 p-3 col-md-2" id="products-collapse">
-        <!-- dynamicall populating sidebar content -->
-      </div>
-      <div class="col-md-9 mt-5 mr-5 ele-sec" id="product-details">
-        <!-- dynamically populating the product details -->
+    <div id="liveAlertPlaceholder"></div>
+
+    <!-- Electronics details section -->
+    <section class="cart container">
+      <h4 class="cart-title mt-5">Cart Details</h4>
+      <div class="cart-summary col d-flex mt-5">
+        <div class="card col-md-6 product-sec bg-info-subtle" id="product-details">
+            <!-- populating the products added to cart -->
+        </div>
+        <div class="col-md-6 mr-5 product-sec" id="cart-summary">
+            <!-- populating the summary details of the cart -->
+        </div>
       </div>
     </section>
 
@@ -126,13 +153,12 @@
       </div>
     </footer>
 
+    <script src="/js/script.js"></script>
+    <script src="/js/cart.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
-    <script src="js/home-furnish.js"></script>
-    <script src="/js/sidebars.js"></script>
   </body>
 </html>

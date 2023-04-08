@@ -107,7 +107,8 @@
   color: #fff;
   font-size: 14px;
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
-  margin-top: 100px;
+  margin-top: 150px;
+  position: relative;
 }
 .copyright {
   background: linear-gradient(to right, #2b2a2b, #2b2a2b);
@@ -171,4 +172,8 @@ body {
 .card {
   background: linear-gradient(to right, #c5e1ef, #fff);
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+
+.cart {
+  border: 1px solid #e2e2e2;
 }
