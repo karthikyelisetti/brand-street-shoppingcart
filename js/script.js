@@ -460,8 +460,8 @@ function fetchCartDetails(cartArr) {
         }
 
       });
-        tax = (price * (18/100));
-        total = price + package + tax;
+        tax = Math.floor((price * (18/100)));
+        total = Math.floor(price + package + tax, 2);
         summaryCard += `<div class="card summary-details">
                           <div class="card-body">
                             <h5 class="card-title">Cart Summary</h5>
