@@ -1,3 +1,4 @@
+// Creating an custom alert message using bootstrap
 const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
 
 const alert = (message, type) => {
@@ -245,6 +246,7 @@ function fetchCategoryDetails(id, elementID = "product-details") {
     });
 }
 
+// Adding the product div based on the Array
 function addProductsDiv(categoryArr, elementID = "product-details") {
   var card = "";
   for (var i = 0; i < categoryArr.length; i++) {
@@ -261,6 +263,7 @@ function addProductsDiv(categoryArr, elementID = "product-details") {
   document.getElementById(`${elementID}`).innerHTML = card;
 }
 
+// populating the products based on the search criteria
 function searchProducts(apiUrl, elementID="product-details") {
   var searchCard = `<div class="row row-cols-1 row-cols-md-2 g-4 mt-3">`;
   fetch(`${apiUrl}`)
@@ -364,6 +367,7 @@ function searchProducts(apiUrl, elementID="product-details") {
     })
 }
 
+// Function to navigate to the search page
 function navigateToSearch () {
   var value = document.getElementById("search-input").value;
   const link = document.createElement('a');
@@ -399,6 +403,7 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
     });
 }
 
+// Code to update the counter and push the respective product IDs to an Array
 var counter = parseInt(localStorage.getItem("cartCounter"));
 if (isNaN(counter)) {
   counter = 0;
@@ -420,6 +425,7 @@ function addToCart(id) {
   }
 }
 
+// Fetching the cart details and displaying the selected products for checkout
 function fetchCartDetails(cartArr) {
   var cartCard = "";
   var summaryCard = "";
