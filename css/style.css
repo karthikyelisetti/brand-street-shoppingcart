@@ -178,6 +178,12 @@ body {
 }
 
 #liveAlertPlaceholder {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
+}
+.btn-plus {
+  margin-top: -30px;
+}
+.btn-dash {
+  margin-top: -30px;
 }

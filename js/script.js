@@ -264,7 +264,7 @@ function addProductsDiv(categoryArr, elementID = "product-details") {
 }
 
 // populating the products based on the search criteria
-function searchProducts(apiUrl, elementID="product-details") {
+function searchProducts(apiUrl, elementID = "product-details") {
   var searchCard = `<div class="row row-cols-1 row-cols-md-2 g-4 mt-3">`;
   fetch(`${apiUrl}`)
     .then((res) => res.json())
@@ -362,15 +362,15 @@ function searchProducts(apiUrl, elementID="product-details") {
               </div>`;
         }
       });
-      
+
       document.getElementById(`${elementID}`).innerHTML = searchCard;
-    })
+    });
 }
 
 // Function to navigate to the search page
-function navigateToSearch () {
+function navigateToSearch() {
   var value = document.getElementById("search-input").value;
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   apiSearchUrl = `https://dummyjson.com/products/search?q=${value}`;
   localStorage.setItem("searchUrl", apiSearchUrl);
   link.href = "./search.html";
@@ -408,15 +408,15 @@ var counter = parseInt(localStorage.getItem("cartCounter"));
 if (isNaN(counter)) {
   counter = 0;
   var cartArr = [];
-}else {  
-  var cartArr = localStorage.getItem("cartArray").split(',');
+} else {
+  var cartArr = localStorage.getItem("cartArray").split(",");
 }
 document.getElementById("quantity").innerHTML = counter;
-function addToCart(id) {  
-  if (cartArr.length != 0 && cartArr.includes(id.toString())){
+function addToCart(id) {
+  if (cartArr.length != 0 && cartArr.includes(id.toString())) {
     alert("Item is already added to the cart", "warning");
     return false;
-  }else{
+  } else {
     cartArr.push(id.toString());
     counter += 1;
     document.getElementById("quantity").innerHTML = counter;
@@ -433,71 +433,124 @@ function fetchCartDetails(cartArr) {
   var tax = 0;
   var total = 0;
   var package = 150;
+  var counter = 0;
   fetch("https://dummyjson.com/products")
     .then((res) => res.json())
     .then((data) => {
       data.products.forEach((object) => {
         for (i in cartArr) {
           if (object.id == cartArr[i]) {
-            cartCard += `<div class="card cart-details mb-3">
-                          <div class="row g-0">
-                            <div class="col-md-3">
-                              <img
-                                src="${object.thumbnail}"
-                                class="img-fluid rounded-start"
-                                alt="${object.title}"
-                              />
-                            </div>
-                            <div class="col-md-9">
-                              <div class="card-body col d-flex ml-3">
-                                <h5 class="card-title prd-title col-md-5">${object.title}</h5>
-                                <p class="card-text col-md-3">1</p>
-                                <p class="card-text col-md-3"><image src="./images/currency-rupee.svg" class="currency-rupee" />${object.price}</p>
-                                <p class="card-text col-md-1">
-                                  <img src="./images/trash.svg" alt="trash" />
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                         </div>`;
-            
+            counter += 1;
+            cartCard += `<div class="row">
+            <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+              <div class="bg-image hover-overlay hover-zoom ripple rounded">
+                <img
+                  src="${object.thumbnail}"
+                  class="w-100"
+                  alt="${object.title}"
+                />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+              <p><strong>${object.title}</strong></p>
+              <p>Discount applied: ${object.discountPercentage}%</p>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm me-1 mb-2"
+                data-bs-toggle="tooltip"
+                title="Remove item"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+              <!-- Quantity -->
+              <div class="d-flex mb-4" style="max-width: 300px">
+                <button
+                  class="btn px-3 me-2 btn-dash"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                >
+                  <img src="./images/dash-circle.svg" style="width: 24px;" alt="plus-icon">
+                </button>
+
+                <div class="form-outline">
+                  <input
+                    id="form1"
+                    min="0"
+                    name="quantity"
+                    value="1"
+                    type="number"
+                    class="form-control"
+                  />
+                  <label class="form-label" for="form1">Quantity</label>
+                </div>
+
+                <button
+                  class="btn px-3 ms-2 btn-plus"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                >
+                <img src="./images/plus-circle.svg" style="width: 24px;" alt="plus-icon">
+                </button>
+              </div>
+              <p class="text-start text-md-center">
+                <strong><img src="../images/currency-rupee.svg">${object.price}</strong>
+              </p>
+            </div>
+          </div>
+          <hr class="my-4" />`;
+
             price += Number(object.price);
           }
         }
-
       });
-        tax = Math.floor((price * (18/100)));
-        total = Math.floor(price + package + tax, 2);
-        summaryCard += `<div class="card summary-details">
-                          <div class="card-body">
-                            <h5 class="card-title">Cart Summary</h5>
-                            <p class="card-text col d-flex">
-                              <table>
-                                  <tr>
-                                      <td class="fw-bold">Items:</td>
-                                      <td>${price}</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="fw-bold">Package:</td>
-                                      <td>${package}</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="fw-bold">Tax:</td>
-                                      <td>${tax}</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="fw-bold">Total:</td>
-                                      <td>${total}</td>
-                                  </tr>
-                              </table>
-                            </p>
-                            <div class="d-flex ">
-                              <a href="#" class="btn btn-outline-success col-md-6 btn-checkout" onclick="processCart()">Checkout</a>                
-                            </div>
-                            
-                          </div>
+      tax = Math.floor(price * (18 / 100));
+      total = Math.floor(price + package + tax, 2);
+      summaryCard += `<div class="card-header py-3">
+                          <h5 class="mb-0">Summary</h5>
+                        </div>
+                        <div class="card-body">
+                          <ul class="list-group-item list-group-flush">
+                            <li
+                              class=
+                              "list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                              Products
+                              <span><img src="../images/currency-rupee.svg">${price}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                              Shipping
+                              <span><img src="../images/currency-rupee.svg">150</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                              Tax
+                              <span><img src="../images/currency-rupee.svg">${tax}</span>
+                            </li>
+                            <li class=
+                                "list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                              <div>
+                                <strong>Total amount</strong>
+                                <strong>
+                                  <p class="mb-0">(including SGST/CGST)</p>
+                                </strong>
+                              </div>
+                              <span><strong><img src="../images/currency-rupee.svg">${total}</strong></span>
+                            </li>
+                          </ul>
+
+                          <button type="button" class="btn btn-primary btn-lg btn-block" onclick="processCart()">
+                            Go to checkout
+                          </button>
                         </div>`;
 
+      cartCard += `</div></div>`;
+      document.getElementById(
+        "cart-card-hdr"
+      ).innerHTML = `<h5 class="mb-0">Cart - ${counter} items</h5>`;
       document.getElementById("product-details").innerHTML = cartCard;
       document.getElementById("cart-summary").innerHTML = summaryCard;
     });
