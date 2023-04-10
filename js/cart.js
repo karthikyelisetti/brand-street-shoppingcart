@@ -18,16 +18,14 @@ function navigateToHome() {
   link.remove();
 }
 
-var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-  target: '#product-details'
-});
-
-var dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
-dataSpyList.forEach(function (dataSpyEl) {
-  bootstrap.ScrollSpy.getInstance(dataSpyEl)
-    .refresh()
-});
-
-var scrollSpyContentEl = document.getElementById('content')
-var scrollSpy = bootstrap.ScrollSpy.getOrCreateInstance(scrollSpyContentEl) // Returns a Bootstrap scrollspy instance
-
+function removeItem(checkedItem) {
+  const index = cartArr.indexOf(checkedItem);
+  if (index > -1) {
+    cartArr.splice(index, 1)
+  }
+  var counter = cartArr.length;
+  localStorage.setItem("cartCounter", counter);
+  document.getElementById("quantity").innerHTML = counter;
+  localStorage.setItem("cartArray", cartArr);
+  fetchCartDetails(cartArr);
+}

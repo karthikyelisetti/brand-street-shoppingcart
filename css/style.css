@@ -74,11 +74,14 @@
 }
 .card-details {
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  width: 330px;
+  margin-top: 50px;
 }
 
 #top-reviewed {
   border: 2px solid #e2e2e2;
   border-radius: 10px;
+  margin-top: 100px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #carouselExample {
@@ -166,8 +169,13 @@
 }
 
 body {
-  background: linear-gradient(to right, #e2e2e2, #ebe7f1) !important;
+  background: linear-gradient(to right, #e2e2e2, #ac9abf) !important;
 }
+/* body {
+  background-image: url(../images/brand-street-bg.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+} */
 .card {
   background: linear-gradient(to right, #c5e1ef, #fff);
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
@@ -180,10 +188,4 @@ body {
 #liveAlertPlaceholder {
   max-width: 600px;
   margin: 0 auto;
-}
-.btn-plus {
-  margin-top: -30px;
-}
-.btn-dash {
-  margin-top: -30px;
 }

@@ -442,12 +442,12 @@ function fetchCartDetails(cartArr) {
           if (object.id == cartArr[i]) {
             counter += 1;
             cartCard += `<div class="row">
-            <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+            <div class="col-lg-3 col-md-12">
               <div class="bg-image hover-overlay hover-zoom ripple rounded">
                 <img
                   src="${object.thumbnail}"
-                  class="w-100"
                   alt="${object.title}"
+                  style="width: 150px; height: 100px;"
                 />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)">
@@ -455,42 +455,39 @@ function fetchCartDetails(cartArr) {
                 </a>
               </div>
             </div>
-
-            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-              <p><strong>${object.title}</strong></p>
+            <div class="col-lg-5 col-md-6">
+              <span><strong>${object.title}</strong></span> <br />
               <p>Discount applied: ${object.discountPercentage}%</p>
               <button
                 type="button"
-                class="btn btn-primary btn-sm me-1 mb-2"
+                class="btn btn-primary btn-sm me-1"
                 data-bs-toggle="tooltip"
                 title="Remove item"
+                id="${object.id}"
+                onclick="removeItem(this.id)"
               >
                 <i class="fas fa-trash"></i>
               </button>
             </div>
-
-            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              <!-- Quantity -->
-              <div class="d-flex mb-4" style="max-width: 300px">
+            <div class="col-lg-4 col-md-6">
+              <div class="d-flex mb-3" style="max-width: 300px">
                 <button
                   class="btn px-3 me-2 btn-dash"
                   onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                 >
                   <img src="./images/dash-circle.svg" style="width: 24px;" alt="plus-icon">
                 </button>
-
                 <div class="form-outline">
                   <input
                     id="form1"
-                    min="0"
+                    min="1"
+                    max="2"
                     name="quantity"
                     value="1"
                     type="number"
-                    class="form-control"
+                    class="form-control text-center"
                   />
-                  <label class="form-label" for="form1">Quantity</label>
                 </div>
-
                 <button
                   class="btn px-3 ms-2 btn-plus"
                   onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
@@ -499,7 +496,7 @@ function fetchCartDetails(cartArr) {
                 </button>
               </div>
               <p class="text-start text-md-center">
-                <strong><img src="../images/currency-rupee.svg">${object.price}</strong>
+                <strong>Price: <img src="../images/currency-rupee.svg">${object.price}</strong>
               </p>
             </div>
           </div>
@@ -541,7 +538,6 @@ function fetchCartDetails(cartArr) {
                               <span><strong><img src="../images/currency-rupee.svg">${total}</strong></span>
                             </li>
                           </ul>
-
                           <button type="button" class="btn btn-primary btn-lg btn-block" onclick="processCart()">
                             Go to checkout
                           </button>

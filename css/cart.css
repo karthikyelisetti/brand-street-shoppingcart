@@ -1,2 +1,5 @@
-
-
+body {
+  background: url(../images/cart-bg.webp) !important;
+  background-repeat: no-repeat;
+  background-size: auto !important;
+}
