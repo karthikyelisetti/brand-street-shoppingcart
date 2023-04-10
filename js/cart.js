@@ -2,7 +2,7 @@ fetchCartDetails(cartArr);
 
 function processCart() {
   alert(
-    `Items processed successfully. Order details will be sent through an email. You will be rediredted to the home page in 5 seconds...`,
+    `Items processed successfully. Order details will be sent through an email. You will be redirected to the home page in 5 seconds...`,
     "success"
   );
   localStorage.clear();
