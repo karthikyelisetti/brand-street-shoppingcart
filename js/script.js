@@ -127,7 +127,7 @@ function fetchSideBarDetails(
       data.forEach((object) => {
         if (categoryArr.includes(object)) {
           sideBar +=
-            '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-semi-bold">' +
+            '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-bold">' +
             "<button" +
             'class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"' +
             'data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true"' +
@@ -388,7 +388,7 @@ function pplteSideBarList(apiURL, elementID = "products-collapse") {
     .then((data) => {
       data.forEach((object) => {
         sideBar +=
-          '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-semi-bold">' +
+          '<ul class="list-unstyled ps-0"><li class="category-list mb-1 fw-bold">' +
           "<button" +
           'class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"' +
           'data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true"' +
