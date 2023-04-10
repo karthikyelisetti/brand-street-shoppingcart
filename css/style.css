@@ -3,6 +3,9 @@
   padding: 0;
 }
 
+nav {
+  background: linear-gradient(to right, #0d4343, #345d55);
+}
 .navbar-brand {
   font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
     Geneva, Verdana, sans-serif;
@@ -107,18 +110,22 @@
 
 /* Footer section */
 .footer {
-  color: #fff;
+  color: #e2e2e2;
   font-size: 14px;
-  background: linear-gradient(to right, #2b2a2b, #2b2a2b);
-  margin-top: 200px;
+  background: linear-gradient(to right, #0d4343, #345d55);
+  margin-top: 240px;
 }
-.copyright {
-  background: linear-gradient(to right, #2b2a2b, #2b2a2b);
+li a .nav-link{
+  color: #fff;
+}
+
+/* .copyright {
+  background: linear-gradient(to right, #0d4343, #345d55);
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-top: 18px;
-}
+} */
 
 /* Product pages specific change */
 .product-sec {
@@ -169,13 +176,9 @@
 }
 
 body {
-  background: linear-gradient(to right, #e2e2e2, #ac9abf) !important;
+  background: linear-gradient(to right, #5b8287, #cfe7e3) !important;
 }
-/* body {
-  background-image: url(../images/brand-street-bg.jpg) !important;
-  background-repeat: no-repeat !important;
-  background-size: 100% 100% !important;
-} */
+
 .card {
   background: linear-gradient(to right, #c5e1ef, #fff);
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
