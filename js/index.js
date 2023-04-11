@@ -4,9 +4,9 @@ function fetchProdctsSummary() {
     .then((res) => res.json())
     .then((data) => {
       data.products.forEach((object) => {
-        card += `<div class="col-md-3">
+        card += `<div class="col-md-3 p-3">
                     <div class="card card-details">
-                    <h6 class="card-title text-sm-center mt-2">
+                    <h6 class="card-title text-sm-center mt-2" style="font-size: 13px; font-family: cursive">
                         ${object.description}
                     </h6>
                     <img

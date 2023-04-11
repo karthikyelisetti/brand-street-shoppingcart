@@ -161,12 +161,52 @@
           data-bs-slide-to="4"
           aria-label="Slide 5"
         ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="6"
+          aria-label="Slide 7"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="7"
+          aria-label="Slide 8"
+        ></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="2000">
           <img
-            src="./images/mobiles-banner.jpg"
-            class="d-block w-100"
+            src="./images/shopping-banner.jpg"
+            class="d-block"
+            alt="shopping"
+          />
+          <!-- <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./images/electronics-banner.png"
+            class="d-block"
+            alt="laptops"
+          />
+          <!-- <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./images/mobiles-banner.webp"
+            class="d-block"
             alt="mobiles"
           />
           <!-- <div class="carousel-caption d-none d-md-block">
@@ -176,9 +216,9 @@
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img
-            src="./images/laptops-banner.jpg"
-            class="d-block w-100"
-            alt="laptops"
+            src="./images/clothing-banner.webp"
+            class="d-block"
+            alt="clothing"
           />
           <!-- <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
@@ -187,7 +227,18 @@
         </div>
         <div class="carousel-item">
           <img
-            src="./images/perfumes-banner.jpg"
+            src="./images/furnish-banner.webp"
+            class="d-block"
+            alt="perfumes"
+          />
+          <!-- <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="./images/Groceries-banner.jpg"
             class="d-block w-100"
             alt="perfumes"
           />
@@ -198,18 +249,7 @@
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img
-            src="./images/Grocery-banner.png"
-            class="d-block w-100"
-            alt="perfumes"
-          />
-          <!-- <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div> -->
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img
-            src="./images/home-furnishing-banner.jpg"
+            src="./images/beauty-care-banner.avif"
             class="d-block w-100"
             alt="perfumes"
           />
@@ -239,18 +279,20 @@
       </button>
     </div>
 
+    <h5 class="hdr-title fw-semi-bold mt-5 text-center">Best deals on your favourite brands!!!</h5>
     <!-- Products summary section (discount cards) -->
-    <section class="container-fluid mt-5">
+    <section class="container mt-4 product-summary-card">
       <div class="row row-cols-1 row-cols-md-2 g-4" id="summary-card">
         <!-- dynamically population from products-summary.json -->
       </div>
     </section>
 
+    <h5 class="hdr-title fw-semi-bold mt-5 text-center">Top reviewed valuable brands!!!</h5>
     <!-- Top reviewed cards section -->
-    <section class="top-reviewed">
-      <div class="container-fluid">
+    <section class="top-reviewed mt-5">
+      <div class="container">
         <div class="review-border" id="top-reviewed">
-          <h5 class="title fw-semi-bold">Top reviewed</h5>
+          <!-- <h5 class="title fw-semi-bold">Top reviewed</h5> -->
           <div
             id="carouselExample"
             class="carousel slide d-none d-sm-block"

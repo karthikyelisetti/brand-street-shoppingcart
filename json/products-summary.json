@@ -19,7 +19,7 @@
         {
             "id": 3,
             "title": "Revamp your home in style",
-            "description": "Upto 20% off | Revamp your home in style",
+            "description": "Upto 20% off | Revamp your home",
             "category": "home-furnishing",
             "images": "../images/home-style.png",
             "href": "home-furnish.html"

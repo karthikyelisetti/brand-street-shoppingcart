@@ -7,8 +7,10 @@ nav {
   background: linear-gradient(to right, #0d4343, #345d55);
 }
 .navbar-brand {
-  font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
-    Geneva, Verdana, sans-serif;
+  /* font-family: "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+    Geneva, Verdana, sans-serif; */
+    font-family: cursive;
+    font-size: 24px !important;
 }
 .navbar-nav {
   margin: 0 auto;
@@ -59,6 +61,10 @@ nav {
   cursor: pointer;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 600px;
+}
 .carousel-control-prev-icon {
   /* background-image: url("../images/left-arrow.png") !important; */
   width: 50px !important;
@@ -77,16 +83,19 @@ nav {
 }
 .card-details {
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  width: 330px;
-  margin-top: 50px;
+  width: 300px;
 }
 
 #top-reviewed {
-  border: 2px solid #e2e2e2;
+  border: 1px solid #e2e2e2;
   border-radius: 10px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.hdr-title {
+  font-family: cursive
+}
+
 #carouselExample {
   padding-top: 10px;
   padding-bottom: 24px;
