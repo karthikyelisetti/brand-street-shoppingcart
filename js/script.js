@@ -118,8 +118,8 @@ function fetchSideBarDetails(
   categoryArr,
   elementID = "products-collapse"
 ) {
-  var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-                  <span class="fs-5 fw-semibold">Category</span>
+  var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none side-bar-hdr">
+                  <span class="fs-5 fw-bold">Category</span>
                  </a>`;
   fetch(`${apiURL}`)
     .then((res) => res.json())
@@ -380,8 +380,8 @@ function navigateToSearch() {
 }
 
 function pplteSideBarList(apiURL, elementID = "products-collapse") {
-  var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-                  <span class="fs-5 fw-semibold">Category</span>
+  var sideBar = `<a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none side-bar-hdr">
+                  <span class="fs-5 fw-bold">Category</span>
                  </a>`;
   fetch(`${apiURL}`)
     .then((res) => res.json())

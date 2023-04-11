@@ -113,7 +113,7 @@ nav {
   color: #e2e2e2;
   font-size: 14px;
   background: linear-gradient(to right, #0d4343, #345d55);
-  margin-top: 240px;
+  margin-top: 100px;
 }
 li a .nav-link{
   color: #fff;
@@ -142,7 +142,13 @@ li a .nav-link{
   text-transform: capitalize;
   font-size: 15px;
   cursor: pointer;
+  transition: 0.2s;
 }
+.category-list:hover {
+  font-size: 18px;
+  color: #382547;
+}
+
 
 /* shoping cart page css changes */
 .flex-shrink-0 {
@@ -176,7 +182,7 @@ li a .nav-link{
 }
 
 body {
-  background: linear-gradient(to right, #5b8287, #cfe7e3) !important;
+  background: linear-gradient(to right, #e2e2e2, #cfe7e3) !important;
 }
 
 .card {
@@ -191,4 +197,12 @@ body {
 #liveAlertPlaceholder {
   max-width: 600px;
   margin: 0 auto;
+}
+
+#products-collapse {
+  border-right: 1px solid rgb(153, 201, 196);
+  box-shadow: 2px 6px 8px 0 rgba(11, 98, 135, 0.18);
+}
+.side-bar-hdr {
+  border-bottom: 4px double rgb(149, 141, 84);
 }
