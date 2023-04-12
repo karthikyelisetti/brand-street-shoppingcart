@@ -17,30 +17,30 @@
 
 ## Team Responsibilities
   #### Karthik Yelisetti (Lead)
-    a. Code Review
-    b. Generic code implementation (Fetching dynamic data using API)
-    c. Home, electronics, Beauty&care, footer, sidebar and cart page implementation
+  * Code Review
+  * Generic code implementation (Fetching dynamic data using API)
+  * Home, electronics, Beauty&care, footer, sidebar and cart page implementation
   #### Sanpreet singh
-    a. Fashion page
+  * Fashion page
   #### Satanaik Kamble
-    a. Automotives page
+  * Automotives page
   #### Chandan Janardhan
-    a. Groceries page, otpless feature and few styling across the webpage
+  * Groceries page, otpless feature and few styling across the webpage
 
 ## Technical Details
   #### Languages
-    * HTML5
-    * CSS3
-    * Bootstrap
-    * Javascript
+  * HTML5
+  * CSS3
+  * Bootstrap
+  * Javascript
   #### Tools
-    * GitHub
-    * Visual studios code
+  * GitHub
+  * Visual studios code
   #### Best Practices
-    a. Implemented common code where ever it is needed
-    b. Avoided code duplication
-    c. Code alignment
-    d. Proper commenting of the code (makes the end user understand why the code is implemented).
+  * Implemented common code where ever it is needed
+  * Avoided code duplication
+  * Code alignment
+  * Proper commenting of the code (makes the end user understand why the code is implemented).
     
 ## Features
   #### Home page
@@ -61,18 +61,18 @@
 
 ## Next steps
   #### Integrating the application with database using
-    * NodeJS
-    * Express JS
-    * Mongo DB
-    * Login feature
-    * User account integration
-    * Payment features implementation
-    * Triggering email to the end users
-    * Order Receipt with pricing details
+  * NodeJS
+  * Express JS
+  * Mongo DB
+  ####Login feature
+  * User account integration
+  * Payment features implementation
+  * Triggering email to the end users
+  * Order Receipt with pricing details
 
 ## Challenges
-  * Increasing the product quantity in the cart page and adding the price to the total in the card summary.
+    Increasing the product quantity in the cart page and adding the price to the total in the card summary.
 
 ## Feedback
-  * Provide your valuable feedback to improve the experience of the webpage...
+    Provide your valuable feedback to improve the experience of the webpage...
   
