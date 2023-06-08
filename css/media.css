@@ -1,0 +1,35 @@
+/* Style for devices have width <= 767px;  */
+/* Mobiles */
+@media (max-width: 767px) {
+  .navbar-brand {
+    font-size: 18px !important;
+  }
+  .carousel-item img {
+    height: 300px;
+  }
+  .carousel-control-prev-icon {
+    width: 30px !important;
+    height: 60px !important;
+  }
+  .carousel-control-next-icon {
+    width: 30px !important;
+    height: 60px !important;
+  }
+  .card-details {
+    width: 330px;
+    margin: -15px auto;
+  }
+  .card-wrapper .card {
+    width: 300px;
+    height: 180px;
+    margin: 0 30px;
+    border: none;
+    border-radius: 0;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  }
+}
+
+/* Style for devices have width >= 768px and <= 1023px; */
+/* iPad */
+@media (min-width: 768px) and (max-width: 1023px) {
+}

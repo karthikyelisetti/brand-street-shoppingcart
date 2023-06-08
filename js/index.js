@@ -29,7 +29,7 @@ function fetchProdctsSummary() {
                     </div>
                 </div>`;
       });
-      
+
       document.getElementById("summary-card").innerHTML = card;
     });
 }
@@ -45,8 +45,8 @@ function fetchTopReviewed() {
       data.products.forEach((object) => {
         counter += 1;
         cardCounter += 1;
-        if(cardActive && counter <= 6) {
-          if(cardCounter == 1) {
+        if (cardActive && counter <= 6) {
+          if (cardCounter == 1) {
             card += `<div class="carousel-item active">
                       <div class="card-wrapper d-lg-flex">
                         <div class="card">
@@ -56,7 +56,7 @@ function fetchTopReviewed() {
                             alt="start-award"
                           />
                      </div>`;
-          }else {
+          } else {
             card += `<div class="card">
                       <img
                         src="${object.images}"
@@ -65,13 +65,13 @@ function fetchTopReviewed() {
                       />
                      </div>`;
           }
-          if(counter%6 == 0) {
+          if (counter % 6 == 0) {
             card += `</div></div>`;
             cardActive = false;
             cardCounter = 0;
           }
-        }else {
-          if(cardCounter == 1) {
+        } else {
+          if (cardCounter == 1) {
             card += `<div class="carousel-item">
                       <div class="card-wrapper d-lg-flex">
                         <div class="card">
@@ -81,7 +81,7 @@ function fetchTopReviewed() {
                             alt="start-award"
                           />
                      </div>`;
-          }else {
+          } else {
             card += `<div class="card">
                       <img
                         src="${object.images}"
@@ -90,7 +90,7 @@ function fetchTopReviewed() {
                       />
                      </div>`;
           }
-          if(counter%6 == 0) {
+          if (counter % 6 == 0) {
             card += `</div></div>`;
             cardCounter = 0;
           }
@@ -101,6 +101,50 @@ function fetchTopReviewed() {
     });
 }
 
+function smallScreenTopReviewed() {
+  var card = "";
+  var cardActive = true;
+  var counter = 0;
+  var cardCounter = 0;
+  fetch("./json/top-reviewed.json")
+    .then((res) => res.json())
+    .then((data) => {
+      data.products.forEach((object) => {
+        counter += 1;
+        cardCounter += 1;
+        if (cardActive) {
+            card += `<div class="carousel-item active">
+                      <div class="card-wrapper d-lg-flex">
+                        <div class="card">
+                          <img
+                            src="${object.images}"
+                            class="card-img-top award"
+                            alt="start-award"
+                          />
+                        </div>
+                      </div>
+                     </div>`;          
+            cardActive = false;
+        } else {
+            card += `<div class="carousel-item">
+                      <div class="card-wrapper d-lg-flex">
+                        <div class="card">
+                          <img
+                            src="${object.images}"
+                            class="card-img-top award"
+                            alt="start-award"
+                          />
+                        </div>
+                      </div>
+                     </div>`;
+          }
+      });
+
+      document.getElementById("mobileview-reviewed").innerHTML = card;
+    });
+}
+
 // Calling the functions to load the data onload of the webpage
 fetchProdctsSummary();
 fetchTopReviewed();
+smallScreenTopReviewed();
